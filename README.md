@@ -18,7 +18,7 @@ Intranet_Security_Company is a utility tech for security companies to keep track
 
 | KEY        | TYPE         | REFERENCE | REQUIRED | VALIDATION           |
 |------------|--------------|-----------|----------|----------------------|
-| employees  | string       |           | YES      |                      |
+| employee   | string       |           | YES      |                      |
 | shift      | string       |           | NO       |                      |
 | age        | number       |           | NO       |                      |
 | phone      | number       |           | YES      | Minlength, Maxlength |
@@ -30,7 +30,7 @@ Intranet_Security_Company is a utility tech for security companies to keep track
 | date          | date         |           | YES      |                      |
 | time          | string       |           | YES      |                      |
 | action        | string       |           | YES      |                      |
-| employees     | [ ObjectId ] | Employees | YES      |                      |
+| employee      | [ ObjectId ] | Employees | YES      |                      |
 | device        | string       |           | YES      |                      |
 | model         | string       |           | YES      |                      |
 | identificator | number       |           | YES      | Minlength, Maxlength |
