@@ -1,7 +1,8 @@
-# Intranet_Security_Company
+# Intranet Security Company
 
 ## DESCRIPTION
-Intranet_Security_Company is a utility tech for security companies to keep track internally. 
+
+Intranet_Security_Company is a utility tech for security companies to keep track internally.
 
 ## DB SCHEMAS
 
@@ -9,7 +10,7 @@ Intranet_Security_Company is a utility tech for security companies to keep track
 
 | KEY        | TYPE         | REFERENCE | REQUIRED | VALIDATION     |
 |------------|--------------|-----------|----------|----------------|
-| name       | string       |           | YES      |                |
+| username   | string       |           | YES      | Unique         |
 | email      | string       |           | YES      | RegExp, Unique |
 | password   | string       |           | YES      |                |
 
