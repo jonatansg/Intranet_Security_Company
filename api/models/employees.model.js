@@ -8,11 +8,11 @@ const employeeSchema = new mongoose.Schema({
     shift: {
         type: String
     },
-    age: {
-        type: Number,
+    birth_date: {
+        type: Date,
     },
     phone: {
-        type: Number,
+        type: String,
         required: [true, 'Phone is required'],
         minlength: [9, '9 digits required'],
         maxlength: [9, '9 digits required']

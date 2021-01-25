@@ -2,7 +2,7 @@
 
 ## DESCRIPTION
 
-Intranet_Security_Company is a utility tech for security companies to keep track internally.
+Intranet Security Company is a utility tech for security companies to keep track internally.
 
 ## DB SCHEMAS
 
@@ -10,7 +10,7 @@ Intranet_Security_Company is a utility tech for security companies to keep track
 
 | KEY        | TYPE         | REFERENCE | REQUIRED | VALIDATION     |
 |------------|--------------|-----------|----------|----------------|
-| username   | string       |           | YES      | Unique         |
+| username   | string       |           | YES      |                |
 | email      | string       |           | YES      | RegExp, Unique |
 | password   | string       |           | YES      |                |
 
@@ -20,8 +20,8 @@ Intranet_Security_Company is a utility tech for security companies to keep track
 |------------|--------------|-----------|----------|----------------------|
 | employee   | string       |           | YES      |                      |
 | shift      | string       |           | NO       |                      |
-| age        | number       |           | NO       |                      |
-| phone      | number       |           | YES      | Minlength, Maxlength |
+| birth_date | date         |           | NO       |                      |
+| phone      | string       |           | YES      | Minlength, Maxlength |
 
 ### GPS
 
@@ -53,15 +53,15 @@ Intranet_Security_Company is a utility tech for security companies to keep track
 
 ### USERS ENDPOINTS
 
-| METHOD | URL          | AUTH | FUNCTION         |
-|--------|--------------|------|------------------|
-| GET    | '/users/me'  | YES  | Get user profile |
+| METHOD | URL          | AUTH | FUNCTION            |
+|--------|--------------|------|---------------------|
+| POST   | '/users/me'  | YES  | Update user profile |
 
 ### EMPLOYEES ENDPOINTS
 
 | METHOD | URL               | AUTH | FUNCTION                    |
 |--------|-------------------|------|-----------------------------|
-| POST   | '/employees/'     | YES  | Get a new employee          |
+| POST   | '/employees/'     | YES  | Create a new employee       |
 | GET    | '/employees/'     | YES  | Get employees list          |
 | GET    | '/employees/:id'  | YES  | Get employees profile       |
 | PUT    | '/employees/:id'  | YES  | Update employee information |

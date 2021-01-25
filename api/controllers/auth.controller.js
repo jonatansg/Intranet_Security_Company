@@ -7,12 +7,12 @@ function signUp(req, res) {
     const encryptedPasswd = bcrypt.hashSync(req.body.password, 10)
     userModel
       .create({
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email,
         password: encryptedPasswd
       })
       .then(user => {
-        const data = { email: user.email, name: user.name }
+        const data = { email: user.email, username: user.username }
         const token = jwt.sign(data, process.env.SECRET)
 
         res.status(200).json({ token: token, ...data })
@@ -29,7 +29,7 @@ function login(req, res) {
     .then(user => {
       if (user) {
         if (bcrypt.compareSync(req.body.password, user.password)) {
-          const data = { email: user.email, name: user.name }
+          const data = { email: user.email, username: user.username }
           const token = jwt.sign(data, process.env.SECRET)
 
           res.status(200).json({ token: token, ...data })
