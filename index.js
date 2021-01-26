@@ -26,6 +26,10 @@ const app = express()
     .use(helmet())
     .use(cors())
     .use(morgan('combined'))
+    .use(function(req,res,next) {
+        res.setHeader('Content-Security-Policy', "script-src 'self' https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
+        next();
+    })
     .use(express.json())
     .use(express.static(path.join(__dirname, 'public')))
     .use('/api', require('./api/routes'))

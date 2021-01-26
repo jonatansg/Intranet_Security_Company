@@ -13,6 +13,7 @@ Intranet Security Company is a utility tech for security companies to keep track
 | username   | string       |           | YES      |                |
 | email      | string       |           | YES      | RegExp, Unique |
 | password   | string       |           | YES      |                |
+| role       | string       |           | NO       |                |
 
 ### EMPLOYEES
 
@@ -25,23 +26,23 @@ Intranet Security Company is a utility tech for security companies to keep track
 
 ### GPS
 
-| KEY           | TYPE         | REFERENCE | REQUIRED | VALIDATION           |
-|---------------|--------------|-----------|----------|----------------------|
-| date          | date         |           | YES      |                      |
-| time          | string       |           | YES      |                      |
-| action        | string       |           | YES      |                      |
-| employee      | [ ObjectId ] | Employees | YES      |                      |
-| device        | string       |           | YES      |                      |
-| model         | string       |           | YES      |                      |
-| identificator | number       |           | YES      | Minlength, Maxlength |
-| vehicle       | Object       |           | NO       |                      |
-| inst_descrip  | string       |           | NO       |                      |
-| company_name  | string       |           | YES      |                      |
-| inst_address  | string       |           | NO       |                      |
-| location      | string       |           | NO       |                      |
-| city          | string       |           | NO       |                      |
-| province      | string       |           | NO       |                      |
-| notes         | string       |           | NO       |                      |
+| KEY            | TYPE         | REFERENCE | REQUIRED | VALIDATION           |
+|----------------|--------------|-----------|----------|----------------------|
+| date           | date         |           | YES      |                      |
+| time           | string       |           | YES      |                      |
+| action         | string       |           | YES      | Enum                 |
+| employee       | [ ObjectId ] | Employees | YES      |                      |
+| device         | string       |           | YES      |                      |
+| model          | string       |           | YES      |                      |
+| identification | number       |           | YES      | Minlength, Maxlength |
+| vehicle        | Object       |           | NO       |                      |
+| inst_descrip   | string       |           | NO       |                      |
+| company_name   | string       |           | NO       |                      |
+| inst_address   | string       |           | NO       |                      |
+| location       | string       |           | NO       |                      |
+| city           | string       |           | NO       |                      |
+| province       | string       |           | NO       |                      |
+| notes          | string       |           | NO       |                      |
 
 ## API ROUTES
 
@@ -74,8 +75,8 @@ Intranet Security Company is a utility tech for security companies to keep track
 | POST   | '/gps/'                     | YES  | Get a gps device      |
 | GET    | '/gps/'                     | YES  | Get gps list          |
 | GET    | '/gps/:id'                  | YES  | Get a gps device      |
-| PUT    | '/gps/:id'                  | YES  | Update a gps device   |
-| DELETE | '/gps/:id'                  | YES  | Delete a gps device   |
 | GET    | '/gps/date/:dateId'         | YES  | List gps by date      |
 | GET    | '/gps/city/:cityId'         | YES  | List gps by city      |
 | GET    | '/gps/province/:provinceId' | YES  | List gps by province  |
+| PUT    | '/gps/:id'                  | YES  | Update a gps device   |
+| DELETE | '/gps/:id'                  | YES  | Delete a gps device   |
