@@ -10,7 +10,7 @@ const gpsSchema = new mongoose.Schema({
     },
     action: {
         type: String,
-        enum: ['Installed', 'Unistalled'],
+        enum: ['Installed', 'Uninstalled'],
         required: true
     },
     employee: {

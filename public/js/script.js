@@ -19,5 +19,5 @@ document.getElementById('login').addEventListener("click", function(){
   })
   
   function goHome(){
-    window.location = "http://localhost:3000/home.html"
+  window.location = "http://localhost:3000/gps.html"
   }

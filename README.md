@@ -72,7 +72,7 @@ Intranet Security Company is a utility tech for security companies to keep track
 
 | METHOD | URL                         | AUTH | FUNCTION              |
 |--------|-----------------------------|------|-----------------------|
-| POST   | '/gps/'                     | YES  | Get a gps device      |
+| POST   | '/gps/'                     | YES  | Create a gps device   |
 | GET    | '/gps/'                     | YES  | Get gps list          |
 | GET    | '/gps/:id'                  | YES  | Get a gps device      |
 | GET    | '/gps/date/:dateId'         | YES  | List gps by date      |
