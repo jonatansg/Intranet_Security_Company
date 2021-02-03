@@ -15,7 +15,7 @@ const gpsSchema = new mongoose.Schema({
     },
     employee: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'employees'
+        ref: 'employee'
     },
     device: {
         type: String,

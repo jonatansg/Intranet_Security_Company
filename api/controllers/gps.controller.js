@@ -44,6 +44,7 @@ function createGps(req, res) {
 function getAllGps(req, res) {
     GpsModel
         .find()
+        .populate("employee")
         .then(response => res.json(response))
         .catch((err) => handleError(err, res))
 }

@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPS</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -22,7 +21,6 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="./img/logo.png">
-            ITS
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,117 +54,162 @@
   </div>
 
   <!-- FORM -->
-  <section class="container">
-    <p></p>
-    <h3 class="text-uppercase text-center">Create a new GPS device</h3>
-  </section>
-  <p></p>
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-8 mx-auto">
+        <h3 class="text-uppercase text-center text-info bg-secondary">Create a new GPS device</h3>
 
-  <form action="" class="form-inline justify-content-evenly flex-column flex-md-row">
-    <div class="form-group my-2">
-      <label for="" class="mx-2 hidden-sm-down">DATE:</label>
-      <input type="datetime-local" placeholder="">
+        <form action="" class="form">
+          <div class="d-flex flex-row justify-content-between align-items-center form-group my-3 text-light bg-secondary">
+            <label class="px-3">
+              Date
+              <input type="datetime-local" placeholder="">
+            </label>
+
+            <label for="" class="d-flex flex-row align-items-center">
+              Action:
+              <div class="form-check form-check-inline m-2">
+                <label class="form-check-label mx-2">
+                  Installed
+                  <input class="form-check-input" type="radio" id="inlineRadio1" value="option1">
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  Uninstalled
+                  <input class="form-check-input" type="radio" id="inlineRadio2" value="option2">
+                </label>
+              </div>
+            </label>
+          </div>
+
+          <div class="d-flex flex-row justify-content-between align-items-center px-2 my-3 g-3 text-light bg-secondary">
+            <div class="col-auto">
+              <label for="employee" class="col-form-label m-2">Employee</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="employee" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="company" class="col-form-label">Company</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="company" class="form-control">
+            </div>
+          </div>
+
+          <div class="d-flex flex-row justify-content-between align-items-center px-2 my-3 g-3 text-light bg-secondary">
+            <div class="col-auto">
+              <label for="device" class="col-form-label m-2">Device</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="device" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="model" class="col-form-label">Model</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" size="10" id="model" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="identification" class="col-form-label">ID</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" min="1" max="9999" id="identification" class="form-control">
+            </div>
+          </div>
+
+        <div class="bg-secondary text-light">
+          <h5 class="text-uppercase text-center py-2 text-light">Vehicle</h5>
+
+          <div class="d-flex flex-row justify-content-between g-3 m-2 p-2">
+            <div class="col-auto">
+              <label for="brand" class="col-form-label">Brand</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="brand" size="18" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="model-vehicle" class="col-form-label">Model</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="model-vehicle" class="form-control">
+            </div>
+          </div>
+
+          <div class="d-flex flex-row justify-content-between g-3 m-2 p-2">
+            <div class="col-auto">
+              <label for="colour" class="col-form-label">Colour</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="colour" size="18" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="plate" class="col-form-label">Plate</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" minlength="4" maxlength="8" id="plate" class="form-control">
+            </div>
+          </div>
+        </div>
+
+          <div class="form-floating my-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 75px"></textarea>
+            <label for="floatingTextarea2">Description Installation:</label>
+          </div>
+
+          <div class="form-floating my-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 75px"></textarea>
+            <label for="floatingTextarea2">Address Installation:</label>
+          </div>
+
+          <div class="d-flex justify-content-between flex-row g-3 p-3 text-light bg-secondary">
+            <div class="col-auto">
+              <label for="location" class="col-form-label">Location</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" size="15" id="location" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="city" class="col-form-label">City</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" size="10" id="city" class="form-control">
+            </div>
+
+            <div class="col-auto">
+              <label for="province" class="col-form-label">Province</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="Province" class="form-control">
+            </div>
+
+          </div>
+
+          <div class="form-floating my-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Notes:</label>
+          </div>
+
+        </form>
+        <form class="d-flex justify-content-center">
+          <button class="btn btn-success" type="button">Submit</button>
+        </form>
+      </div>
     </div>
 
-    <label for="" class="mx-2 hidden-sm-down">ACTION:</label>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-      <label class="form-check-label" for="inlineRadio1">Installed</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-      <label class="form-check-label" for="inlineRadio2">Uninstalled</label>
-    </div>
-    <div class="form-group my-2">
-      <label for="" class="mx-2 hidden-sm-down">EMPLOYEE:</label>
-      <input type="text" placeholder="enter the employee">
-    </div>
-    <div class="form-group my-2">
-      <label for="" class="mx-2 hidden-sm-down">COMPANY:</label>
-      <input type="text" placeholder="enter name company">
-    </div>
-  </form>
-
-  <form action="" class="form-inline justify-content-evenly flex-column flex-md-row">
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">DEVICE:</label>
-      <input type="text" placeholder="enter the device GPS">
-    </div>
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">MODEL:</label>
-      <input type="text" placeholder="enter the device model GPS">
-    </div>
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">IDENTIFICATION:</label>
-      <input type="number" placeholder="enter the device id">
-    </div>
-  </form>
-
-  <section class="container">
-    <p></p>
-    <h6 class="text-uppercase text-center">Vehicle:</h6>
-  </section>
-
-  <form action="" class="form-inline justify-content-evenly flex-column flex-md-row">
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">BRAND:</label>
-      <input type="text" placeholder="enter the vehicle brand">
-    </div>
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">MODEL:</label>
-      <input type="text" placeholder="enter the vehicle model">
-    </div>
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">COLOUR:</label>
-      <input type="text" placeholder="enter the vehicle colour">
-    </div>
-    <div class="form-group my-4">
-      <label for="" class="mx-2 hidden-sm-down">PLATE:</label>
-      <input type="text" placeholder="enter the vehicle plate">
-    </div>
-  </form>
-
-  <div class="form-floating">
-    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-      style="height: 100px"></textarea>
-    <label for="floatingTextarea2">Description Installation:</label>
-  </div>
-
-  <form action="" class="form-inline justify-content-evenly flex-column flex-md-row">
-    <div class="form-group my-5">
-      <label for="" class="mx-2 hidden-sm-down">ADDRESS INSTALLATION:</label>
-      <input type="text" placeholder="enter the address installation">
-    </div>
-    <div class="form-group my-5">
-      <label for="" class="mx-2 hidden-sm-down">LOCATION:</label>
-      <input type="text" placeholder="enter the location">
-    </div>
-    <div class="form-group my-5">
-      <label for="" class="mx-2 hidden-sm-down">CITY:</label>
-      <input type="text" placeholder="enter the city">
-    </div>
-    <div class="form-group my-5">
-      <label for="" class="mx-2 hidden-sm-down">PROVINCE:</label>
-      <input type="text" placeholder="enter the province">
-    </div>
-  </form>
-
-  <div class="form-floating">
-    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-      style="height: 100px"></textarea>
-    <label for="floatingTextarea2">Notes:</label>
-  </div>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>

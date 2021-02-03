@@ -34,7 +34,7 @@ Intranet Security Company is a utility tech for security companies to keep track
 | employee       | [ ObjectId ] | Employees | YES      |                      |
 | device         | string       |           | YES      |                      |
 | model          | string       |           | YES      |                      |
-| identification | number       |           | YES      | Minlength, Maxlength |
+| identification | number       |           | YES      | Max, Min             |
 | vehicle        | Object       |           | NO       |                      |
 | inst_descrip   | string       |           | NO       |                      |
 | company_name   | string       |           | NO       |                      |

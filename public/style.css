@@ -1,5 +1,17 @@
 body{
     background-color: rgb(219, 216, 216);
     font-family: sans-serif;
-    background-size: cover;
+    background-image: url(./img/backGps.jpg);
+    /* background-size: cover; */
+    /* background-position: center; */
 }
+
+img {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+   }
+   
+   img:hover {
+    opacity:1.0;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+   }
