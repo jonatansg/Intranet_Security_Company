@@ -1,5 +1,5 @@
 axios
-  .get('http://localhost:3000/api/employees', { headers: { token: localStorage.getItem('token')}})
+  .get('https://its-2021.herokuapp.com/api/employees', { headers: { token: localStorage.getItem('token')}})
   .then(response => {
     const employees = document.getElementById('employees');
     response.data.forEach(employee => {

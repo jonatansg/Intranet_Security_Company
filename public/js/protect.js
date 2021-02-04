@@ -1,3 +1,3 @@
 if (!localStorage.getItem('token')) {
-    window.location = 'http://localhost:3000'
+    window.location = 'https://its-2021.herokuapp.com'
 }
