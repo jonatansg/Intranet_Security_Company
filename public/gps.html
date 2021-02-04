@@ -6,9 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPS</title>
-
-  <!-- <meta http-equiv="Content-Security-Policy"
-    content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" /> -->
+  <link rel="icon" type="image/png" href="./img/logo.png">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +21,6 @@
     <header class="row">
 
       <!-- NAVBAR -->
-
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -51,21 +48,22 @@
               </li>
             </ul>
             <form class="d-flex">
-              <button class="btn btn-outline-primary" type="submit">Logout</button>
+              <button id="logout-button" class="btn btn-outline-primary" type="submit">Logout</button>
             </form>
           </div>
         </div>
       </nav>
 
     </header>
-  
 
-  <!-- ACCORDION -->
+    <!-- ACCORDION -->
     <section class="container-fluid">
       <div class="row">
         <div class="col-6 offset-3">
+          <form class="d-flex justify-content-center my-2">
+            <button class="btn btn-success" type="button">CREATE NEW DEVICE GPS</button>
+          </form>
           <div class="accordion" id="accordionExample">
-            
           </div>
         </div>
       </div>
@@ -76,6 +74,7 @@
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
   <script src="js/gps.js"></script>
+  <!-- <script src="js/logout.js"></script> -->
 </body>
 
 </html>

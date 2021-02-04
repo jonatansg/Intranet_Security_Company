@@ -5,9 +5,6 @@ const gpsSchema = new mongoose.Schema({
         type: Date,
         required: [true, 'Date is required']
     },
-    time: {
-        type: String
-    },
     action: {
         type: String,
         enum: ['Installed', 'Uninstalled'],
@@ -16,6 +13,9 @@ const gpsSchema = new mongoose.Schema({
     employee: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'employee'
+    },
+    company: {
+        type: String
     },
     device: {
         type: String,
@@ -38,9 +38,6 @@ const gpsSchema = new mongoose.Schema({
         plate: String,
     },
     instDescrip: {
-        type: String
-    },
-    company: {
         type: String
     },
     instAddress: {

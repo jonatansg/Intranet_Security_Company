@@ -21,7 +21,7 @@ Intranet Security Company is a utility tech for security companies to keep track
 |------------|--------------|-----------|----------|----------------------|
 | employee   | string       |           | YES      |                      |
 | shift      | string       |           | NO       |                      |
-| birth_date | date         |           | NO       |                      |
+| birthDate  | date         |           | NO       |                      |
 | phone      | string       |           | YES      | Minlength, Maxlength |
 
 ### GPS
@@ -29,16 +29,15 @@ Intranet Security Company is a utility tech for security companies to keep track
 | KEY            | TYPE         | REFERENCE | REQUIRED | VALIDATION           |
 |----------------|--------------|-----------|----------|----------------------|
 | date           | date         |           | YES      |                      |
-| time           | string       |           | YES      |                      |
 | action         | string       |           | YES      | Enum                 |
 | employee       | [ ObjectId ] | Employees | YES      |                      |
+| company        | string       |           | NO       |                      |
 | device         | string       |           | YES      |                      |
 | model          | string       |           | YES      |                      |
 | identification | number       |           | YES      | Max, Min             |
 | vehicle        | Object       |           | NO       |                      |
-| inst_descrip   | string       |           | NO       |                      |
-| company_name   | string       |           | NO       |                      |
-| inst_address   | string       |           | NO       |                      |
+| instDescrip    | string       |           | NO       |                      |
+| instAddress    | string       |           | NO       |                      |
 | location       | string       |           | NO       |                      |
 | city           | string       |           | NO       |                      |
 | province       | string       |           | NO       |                      |

@@ -17,9 +17,9 @@ function createGps(req, res) {
     GpsModel
         .create({
             date: req.body.date,
-            time: req.body.time,
             action: req.body.action,
             employee: req.body.employee,
+            company: req.body.company,
             device: req.body.device,
             model: req.body.model,
             identification: req.body.identification,
@@ -30,7 +30,6 @@ function createGps(req, res) {
                 plate: req.body.vehicle.plate
             },
             instDescrip: req.body.instDescrip,
-            company: req.body.company,
             instAddress: req.body.instAddress,
             location: req.body.location,
             city: req.body.city,
