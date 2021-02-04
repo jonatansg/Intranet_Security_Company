@@ -1,7 +1,15 @@
-window.onload = () => {
+const api = axios.create({
+  baseURL: "http://localhost:3000/api", 
+  timeout: 2000
+})
 
-  axios.get(
-    "http://localhost:3000/api/gps/",
+window.onload = () => {
+  document.getElementById("btn-create").addEventListener("click", () => {
+    window.location.href = "form.html"
+  })
+
+  api.get(
+    "/gps/",
     {
       headers: {
         token: localStorage.getItem("token")
@@ -9,21 +17,22 @@ window.onload = () => {
     }
   ).then(result => {
     const accordion = document.getElementById("accordionExample")
-    result.data.forEach(item => {
-      accordion.innerHTML += `
-              <div class="accordion-item">
+    result.data.forEach((item, i) => {
+      let element = document.createElement("div")
+      element.classList.add("accordion-item")
+      element.innerHTML += `
                   <h2 class="accordion-header" id="headingOne">
-                    <div class= "d-flex justify-content-end">
-                      <button data-update="${item._id}" type="button" class="btn btn-warning text-light">EDIT</button>
-                      <button data-delete="${item._id}" type="button" class="btn btn-danger mx-2">DELETE</button>
+                    <div class="d-flex justify-content-end">
+                      <button id="btn-update-${i}" class="btn btn-warning text-light mx-2">EDIT</button>
+                      <button id="btn-delete-${i}" class="btn btn-danger mx-2">DELETE</button>
                     </div>
-                      <button class="accordion-button bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <button class="accordion-button bg-secondary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
                         <div class="row mx-2">
                           ${item.employee.employee} · ${item.action} · ${item.device} · ${item.location} 
                         </div>
                       </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="collapse${i}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body bg-light">
                           <ul>
                               <li>Date: ${item.date}</li>
@@ -45,20 +54,23 @@ window.onload = () => {
                               <li>Notes: ${item.notes}</li>
                           </ul>
                       </div>
-                  </div>
-              </div>`
-      //  document.querySelector(`button.data-update='${item._id}'`).addEventListener("click", function() {
-      //  window.location(`http://localhost:3000/edit.html?id=${item._id}`)
-      //  })
+                  </div>`
+              accordion.appendChild(element)
+              document.getElementById(`btn-update-${i}`).addEventListener("click", function () {
+                localStorage.setItem("gps-id", item._id)
+                window.location.href= "edit.html"
+              })
+              document.getElementById(`btn-delete-${i}`).addEventListener("click", function () {
+                api.delete(`/gps/${item._id}`, {
+                  headers: {
+                    token: localStorage.getItem("token")
+                  }
+                }) 
+                .then(resp => {
+                  alert("GPS device has been successfully deleted")
+                  window.location.reload()
+                }) 
+              })
     })
-  }).catch((err) => handleError(err, res)
-  )
-
-  function updateItem(itemID) {
-
-  }
-
-  function deleteItem(itemID) {
-
-  }
+  }).catch((err) => console.log("error"))
 }

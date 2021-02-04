@@ -1,5 +1,6 @@
 const GpsModel = require('../models/gps.model')
 const { handleError } = require('../utils')
+const mongoose = require('mongoose')
 
 module.exports = {
     createGps,
@@ -18,7 +19,7 @@ function createGps(req, res) {
         .create({
             date: req.body.date,
             action: req.body.action,
-            employee: req.body.employee,
+            employee: mongoose.Types.ObjectId(req.body.employee),
             company: req.body.company,
             device: req.body.device,
             model: req.body.model,

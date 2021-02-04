@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Gps Device</title>
+  <title>Edit Gps Device</title>
   <link rel="icon" type="image/png" href="./img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -56,7 +58,7 @@
   <section class="container-fluid">
     <div class="row">
       <div class="col-8 mx-auto">
-        <h3 class="text-uppercase text-center text-light bg-success">New GPS device</h3>
+        <h3 class="text-uppercase text-center text-light bg-warning">Edit GPS device</h3>
 
         <form action="" class="form">
           <div class="d-flex flex-row justify-content-between align-items-center form-group my-3 text-light bg-secondary">
@@ -70,7 +72,7 @@
               <div class="form-check form-check-inline m-2">
                 <label class="form-check-label mx-2">
                   Installed
-                  <input class="form-check-input" type="radio" name="inlineRadio" id="inlineRadio1" value="Installed" checked>
+                  <input class="form-check-input" type="radio" name="inlineRadio" id="inlineRadio1" value="Installed">
                 </label>
               </div>
               <div class="form-check form-check-inline">
@@ -194,14 +196,14 @@
           </div>
 
           <div class="form-floating my-3">
-            <textarea id="notes-input" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            <textarea class="form-control" id="notes-input" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 100px"></textarea>
             <label for="floatingTextarea2">Notes:</label>
           </div>
 
         </form>
         <form class="d-flex justify-content-center">
-          <button id="submit-button" class="btn btn-success" type="button">SUBMIT</button>
+          <button id="submit-button" class="btn btn-warning text-light" type="button">SUBMIT</button>
         </form>
       </div>
     </div>
@@ -209,8 +211,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/form.js"></script>
+      <script src="js/edit.js"></script>
 </body>
 
 </html>

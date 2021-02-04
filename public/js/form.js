@@ -1,18 +1,40 @@
-const { default: axios } = require("axios");
+const api = axios.create({
+    baseURL: "http://localhost:3000/api",
+    timeout: 2000
+
+})
+
+api.get(
+    "/employees",
+    { headers: { token: localStorage.getItem("token") } }
+).then(employees => {
+    let select = document.getElementById("employee")
+    employees.data.forEach(employee => {
+        let option = document.createElement("option")
+        option.value = employee._id
+        option.innerText = employee.employee
+        select.appendChild(option)
+        console.log(option.value)
+    });
+}).catch(err => {
+    console.error(err)
+})
 
 document.getElementById("submit-button").addEventListener("click", function () {
     const body = {
         date: document.getElementById("date-input").value,
-        action: document.getElementById("action-input").value,
+        action: document.querySelector("input[name='inlineRadio']:checked").value,
         employee: document.getElementById("employee").value,
         company: document.getElementById("company").value,
         device: document.getElementById("device").value,
         model: document.getElementById("model").value,
         identification: document.getElementById("identification").value,
-        // vehicleBrand: document.getElementById("brand").value,
-        // vehicleModel: document.getElementById("model-vehicle").value,       PREGUNTAR OBJETO
-        // vehicleColour: document.getElementById("colour").value,
-        // vehiclePlate: document.getElementById("plate").value,
+        vehicle: {
+            brand: document.getElementById("brand").value,
+            model: document.getElementById("model-vehicle").value,
+            colour: document.getElementById("colour").value,
+            plate: document.getElementById("plate").value
+        },
         instDescrip: document.getElementById("descrip-input").value,
         instAddress: document.getElementById("address-input").value,
         location: document.getElementById("location").value,
@@ -21,13 +43,15 @@ document.getElementById("submit-button").addEventListener("click", function () {
         notes: document.getElementById("notes-input").value
     }
 
-    axios.post(
-        "http://localhost:3000/api/gps",    //llamada a la API
+    api.post(
+        "/gps",
         body,
-        {headers: {token: localStorage.getItem("token")}}
+        { headers: { token: localStorage.getItem("token") } }
     ).then(result => {
         alert("GPS device has been successfully created")
-        window.location("http://localhost:3000/gps.html")
+        window.location.href = "gps.html"
     })
-    .catch()
+        .catch(err => {
+            console.error(err)
+        })
 })

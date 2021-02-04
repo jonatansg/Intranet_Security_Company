@@ -1,5 +1,10 @@
+const api = axios.create({
+  baseURL: "http://localhost:3000/api", 
+  timeout: 2000
+})
+
 document.getElementById('login').addEventListener("click", function(){
-    axios.post('http://localhost:3000/api/auth/login', {
+    api.post('/auth/login', {
       email: document.getElementById('login_email').value,
       password: document.getElementById('login_password').value
     })
@@ -19,5 +24,5 @@ document.getElementById('login').addEventListener("click", function(){
   })
   
   function goHome(){
-  window.location = "http://localhost:3000/gps.html"
+  window.location.href = "gps.html"
   }
