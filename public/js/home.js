@@ -1,5 +1,10 @@
-axios
-  .get('https://its-2021.herokuapp.com/api/employees', { headers: { token: localStorage.getItem('token')}})
+const api = axios.create({
+  baseURL: "https://its-2021.herokuapp.com/api", 
+  timeout: 2000
+})
+
+api
+  .get('/api/employees', { headers: { token: localStorage.getItem('token')}})
   .then(response => {
     const employees = document.getElementById('employees');
     response.data.forEach(employee => {
