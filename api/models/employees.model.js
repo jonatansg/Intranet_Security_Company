@@ -6,7 +6,8 @@ const employeeSchema = new mongoose.Schema({
         required: [true, 'Employee name is required']
     },
     shift: {
-        type: String
+        type: String,
+        enum: ['morning', 'afternoon', 'night']
     },
     birth_date: {
         type: Date,
