@@ -2,7 +2,7 @@
 
 ## DESCRIPTION
 
-Intranet Security Company is a utility tech for security companies to keep track internally.
+Intranet Security Company is a utility tech for security companies to keep track internally. You can test it [here](https://its-2021.herokuapp.com/).
 
 ## DB SCHEMAS
 
